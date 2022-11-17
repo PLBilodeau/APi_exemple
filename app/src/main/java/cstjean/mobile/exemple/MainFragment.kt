@@ -11,8 +11,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.work.*
 import cstjean.mobile.exemple.databinding.FragmentMainBinding
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
+
+private const val POLL_WORK = "POLL_WORK"
 
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
@@ -23,6 +27,30 @@ class MainFragment : Fragment() {
         get() = checkNotNull(_binding) {
             "Binding est null. La vue est visible ??"
         }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val constraints = Constraints.Builder()
+            .setRequiredNetworkType(NetworkType.UNMETERED)
+            .build()
+
+        val workRequest = OneTimeWorkRequest.Builder(PollWorker::class.java)
+            .setConstraints(constraints)
+            .build()
+
+        val periodicRequest = PeriodicWorkRequestBuilder<PollWorker>(15, TimeUnit.MINUTES)
+            .setConstraints(constraints)
+            .build()
+
+        WorkManager.getInstance(requireContext()).enqueueUniquePeriodicWork(
+            POLL_WORK,
+            ExistingPeriodicWorkPolicy.KEEP,
+            periodicRequest
+
+        )
+        WorkManager.getInstance(requireContext()).enqueue(workRequest)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -21,4 +21,8 @@ class GifRepository {
 
     suspend fun fetchTrending(): List<Gif> = giphyApi.fetchTrending().data
 
+    fun search(query: Any): Any {
+        TODO("Not yet implemented")
+    }
+
 }
