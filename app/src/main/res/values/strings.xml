@@ -5,4 +5,6 @@
     <string name="notification_channel_name">Background updates</string>
     <string name="new_gifs_title">Nouveaux Gifs !</string>
     <string name="new_gifs_text">De nouveaux gifs sur Giphy !</string>
+    <string name="search">search</string>
+    <string name="clear_search">clear search</string>
 </resources>
