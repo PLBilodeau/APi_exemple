@@ -4,6 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notification_channel_name">Background updates</string>
     <string name="new_gifs_title">Nouveaux Gifs !</string>
+    <string name="notification_channel_id">giphy_poll</string>
     <string name="new_gifs_text">De nouveaux gifs sur Giphy !</string>
     <string name="search">search</string>
     <string name="clear_search">clear search</string>

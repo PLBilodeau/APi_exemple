@@ -11,9 +11,9 @@ class GifViewHolder(
     private val binding: ListGifGalleryBinding
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(gif: Gif) {
-        binding.itemImageView.load(gif.images.fixedHeight.url) {
+        /**binding.itemImageView.load(gif.images.fixedHeight.url) {
             placeholder(R.drawable.ic_baseline_insert_photo_24)
-        }
+        }*/
     }
 }
 

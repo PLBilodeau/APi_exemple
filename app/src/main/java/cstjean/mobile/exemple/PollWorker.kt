@@ -7,6 +7,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
+import kotlinx.coroutines.flow.first
 import java.lang.reflect.Array.get
 
 class PollWorker (
@@ -48,7 +49,10 @@ class PollWorker (
 
         val resources = context.resources
 
-        val notification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
+        val notification = NotificationCompat.Builder(
+                context,
+                resources.getString(R.string.notification_channel_id)
+        )
             .setTicker(resources.getString(R.string.new_gifs_title))
             .setSmallIcon(android.R.drawable.ic_menu_report_image)
             .setContentTitle(resources.getString(R.string.new_gifs_title))

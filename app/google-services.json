@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297603665463",
+    "project_id": "mobile-2---notification",
+    "storage_bucket": "mobile-2---notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297603665463:android:9b6b6a12c4605a09d139b2",
+        "android_client_info": {
+          "package_name": "cstjean.mobile.exemple"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297603665463-2m1hdod2pihqu2p29mp0agbitp71of08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHKP2pQ9voXQpNwXFZxdnu7dPzyWIO29Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297603665463-2m1hdod2pihqu2p29mp0agbitp71of08.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
